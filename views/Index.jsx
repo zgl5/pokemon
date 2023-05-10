@@ -17,9 +17,9 @@ class Index extends React.Component {
                               <li>
                                   The{' '}
                                   <a href={`/pokemon/${i}`}>
-                                      {pokemon.name}
+                                      {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
                                   </a>{' '}
-                                  i{pokemon.image} <br></br>
+                                  {pokemon.image} <br></br>
                                
                                   <br />
                               </li>
