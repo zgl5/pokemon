@@ -20,6 +20,25 @@ app.get('/pokemon', (req, res) => {
     res.render('Index', {pokemon: pokemon})
 })
 
+// id route
+// app.get('/pokemon/:i', function(req, res){
+//     res.render('Show', { //second param must be an object   
+//      fruit: fruits[req.params.indexOfFruitsArray] //there will be a variable available inside the ejs file called fruit, its value is fruits[req.params.indexOfFruitsArray]
+//    });
+//  }); 
+ 
+  app.get('/pokemon/:id', (req, res) => {
+     res.send(pokemon[req.params.id]);
+ });
+ 
+//  // Index Route - GET /vegetables
+//  app.get('/vegetables', function(req, res){
+//      res.render('IndexVet', { vegetables: vegetables });
+//  }); 
+
+
+
+
 
 
 app.listen({port}, () => {
