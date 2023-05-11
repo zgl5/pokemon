@@ -13,23 +13,29 @@ app.set('view engine', 'jsx');
 // });
 
 app.get('/', (req, res) => {
-    res.send('Welcome to the Pokemon App!')
+    let message = '<div style="font-family: Arial; font-size: 26px; font-style: oblique; color: blue; line-height: 1.6; background-color:yellow">' + 'Welcome to the Pokemon App!'
+    message += '<br><br><a  href="/pokemon"> Pokemon Index page </a>'      
+    res.send(message)
 })
 
 app.get('/pokemon', (req, res) => {
     res.render('Index', {pokemon: pokemon})
+    
 })
 
-// id route
-// app.get('/pokemon/:i', function(req, res){
-//     res.render('Show', { //second param must be an object   
-//      fruit: fruits[req.params.indexOfFruitsArray] //there will be a variable available inside the ejs file called fruit, its value is fruits[req.params.indexOfFruitsArray]
-//    });
-//  }); 
- 
+
+app.get('/pokemon/:id', function(req, res){
+res.render('Show', { 
+ pokemon: pokemon[req.params.id] 
+
+});  
+}); 
+
+ // id route
   app.get('/pokemon/:id', (req, res) => {
-     res.send(pokemon[req.params.id]);
- });
+     res.send(pokemon[req.params.id])
+     
+  });
  
 //  // Index Route - GET /vegetables
 //  app.get('/vegetables', function(req, res){

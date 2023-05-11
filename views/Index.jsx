@@ -3,6 +3,8 @@ const React = require('react');
 const myStyle = {
     color: '#DFFF00',
     backgroundColor: '#F08080',
+    fontSize: '25px',
+    lineHeight: '1.6'
     };
 
 class Index extends React.Component {
@@ -18,8 +20,9 @@ class Index extends React.Component {
                                   The{' '}
                                   <a href={`/pokemon/${i}`}>
                                       {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
+                                    
                                   </a>{' '}
-                                  {pokemon.image} <br></br>
+                                 
                                
                                   <br />
                               </li>
@@ -27,9 +30,7 @@ class Index extends React.Component {
                       })}
                   </ul>
                   {/*Put a link in the index page going to the new page*/}
-            <nav>
-    <a href="/pokemon/new">Create a New Pokemon</a>
-</nav>
+                  {/* <nav> <a href="/pokemon/new">Create a New Pokemon</a> </nav>*/}
               </div>
       );
   }
