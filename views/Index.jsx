@@ -14,11 +14,12 @@ class Index extends React.Component {
               <div style={myStyle}>
                   <h1> See All The Pokemon!'</h1>
                   <ul>
-                      {pokemon.map((pokemon, i) => {
+                     { pokemon.map((pokemon, i) => {
                           return (
                               <li>
                                   The{' '}
-                                  <a href={`/pokemon/${i}`}>
+                                   {/* <a href={`/pokemon/${i}`}> */}
+                                   <a href={`/pokemon/${pokemon.id}`}>
                                       {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
                                     
                                   </a>{' '}
@@ -30,7 +31,7 @@ class Index extends React.Component {
                       })}
                   </ul>
                   {/*Put a link in the index page going to the new page*/}
-                  {/* <nav> <a href="/pokemon/new">Create a New Pokemon</a> </nav>*/}
+               <nav> <a href="/pokemon/new">Create a New Pokemon</a> </nav>
               </div>
       );
   }
